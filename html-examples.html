@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="css-example.css">
+    <meta charset="utf-8">
+    <title>Hello World</title>
+  </head>
+  <body>
+    <h1>Hello World</h1>
+    <p>This is a web page.</p>
+  </body>
+</html>
+
+  <!--
+some elements are selfclosing and do not need closing tags,
+for example:
+  
+  <br> <embed> <hr> <img> <input> <link> <meta> <param> <source> <wbr>
+
+  -->
+
+
+
+  <!--
+selectors, properties, and values:
+
+  CSS selectors are followed by curly braces;
+    p {...}
+
+  properties and values of selectors;
+    p {
+      color: orange;
+      font-size: 16px;
+    }
+
+  The most common selectors target by type class, or I.D. which vary in scope:
+    
+    -Type selectors target broadly (all of given type)
+    
+    -Class selectors are a little more specific in their targeting,
+     classes are denoted with dot notation in CSS
+    
+    -I.D. selectors are most precise targeting one unique element,
+     these can only be used once per page (reserve them for significant elements),
+     denoted by a preceeding hashtag in CSS
+
+    There are more advanced selectors available.
+
+
+
+
+<div> and <span> are exceptions to the rule of semantic code. 
+They are used as containers to apply targeted styles to contained content
+
+<div> is block-level element (sually used for large groupings of content)
+
+<span> is inline-level element (usually used for small groupings within a block level element)
+
+
+
+
+
+bolding text in html: semantic differences
+  
+      Strong importance 
+    <p><strong>Caution:</strong> Falling rocks.</p>
+
+      Stylistically offset 
+    <p>This recipe calls for <b>bacon</b> and <b>baconnaise</b>.</p>
+
+
+italicizing in html: semantic differences
+
+      Stressed emphasis
+    <p>I <em>love</em> Chicago!</p>
+
+      Alternative voice or tone
+    <p>The name <i>Shay</i> means a gift.</p>
+
+
+
+
+
+<header> vs. <head> vs. <h1> through <h6> Elements:
+
+  It is easy to confuse the <header> element with the <head> element or the heading elements, <h1> through <h6>. They all have different semantic meanings and should be used according to their meanings. For reference…
+
+  The <header> element is a structural element that outlines the heading of a segment of a page. It falls within the <body> element.
+
+  The <head> element is not displayed on a page and is used to outline metadata, including the document title, and links to external files. It falls directly within the <html> element.
+
+  Heading elements, <h1> through <h6>, are used to designate multiple levels of text headings throughout a page.
+
+
+
+
+Deciding Between <article>, <section>, or <div> Elements:
+
+  At times it becomes fairly difficult to decide which element—<article>, <section>, or <div>—is the best element for the job based on its semantic meaning. The trick here, as with every semantic decision, is to look at the content.
+
+  Both the <article> and <section> elements contribute to a document’s structure and help to outline a document. If the content is being grouped solely for styling purposes and doesn’t provide value to the outline of a document, use the <div> element.
+
+  If the content adds to the document outline and it can be independently redistributed or syndicated, use the <article> element.
+
+  If the content adds to the document outline and represents a thematic group of content, use the <section> element.
+
+
+
+
+Encoding Special Characters:
+  The <h3> element within our <header> element, as well as the <small> element within our <footer> element, has some interesting things going on. Specifically, a few special characters within these elements are being encoded.
+
+  Special characters include various punctuation marks, accented letters, and symbols. When typed directly into HTML, they can be misunderstood or mistaken for the wrong character; thus they need to be encoded.
+
+  Each encoded character will begin with an ampersand, &, and end with a semicolon, ;. What falls between the ampersand and semicolon is a character’s unique encoding, be it a name or numeric encoding.
+
+  For example, we would encode the word “resumé” as resum&eacute;. Within our header we have encoded both en and em dashes, and within our footer we have encoded the copyright symbol. 
+
+
+Relative Path example (linking to page on same site):
+<a href="about.html">About</a>
+
+Absolute Path example (linking to external site):
+<a href="http://www.google.com/">Google</a>
+
+
+
+
+Email Links:
+
+    To create an email link, the href attribute value needs to start with mailto: followed by the email address to which the email should be sent. To create an email link to shay@awesome.com, for example, the href attribute value would be mailto:shay@awesome.com.
+
+Additionally, subject, body text, and other information for the email may be populated. To add a subject line, we’ll include the subject= parameter after the email address. The first parameter following the email address must begin with a question mark, ?, to bind it to the hyperlink path. Multiple words within a subject line require that spaces be encoded using %20.
+
+Adding body text works in the same way as adding the subject, this time using the body= parameter in the href attribute value. Because we are binding one parameter to another we need to use the ampersand, &, to separate the two. As with the subject, spaces must be encoded using %20, and line breaks must be encoded using %0A.
+
+    example:
+
+    <a href="mailto:shay@awesome.com?subject=Reaching%20Out&body=How%20are%20you">Email Me</a>
+  
+-->
+
+
+<!--
+
+Opening links in a new window:
+
+  To trigger the action of opening a link in a new window, use the target attribute with a value of _blank. The target attribute determines exactly where the link will be displayed, and the _blank value specifies a new window.
+
+  example:
+    
+    <a href="http://shayhowe.com/" target="_blank">Shay Howe</a>
+
+Linking to parts of the same page:
+
+  We can create an on-page link by first setting an id attribute on the element we wish to link to, then using the value of that id attribute within an anchor element’s href attribute.
+
+Using the “Back to top” link as an example, we can place an id attribute value of top on the <body> element. Now we can create an anchor element with an href attribute value of #top, pound sign and all, to link to the beginning of the <body> element.
+
+  example:
+
+    <body id="top">
+  ...
+  <a href="#top">Back to top</a>
+  ...
+</body>
+
+
+
